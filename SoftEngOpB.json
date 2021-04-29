@@ -1,0 +1,1278 @@
+{
+  "summary": {
+    "title": "Software Engineering Assignment 2",
+    "owner": "Gbadebo Adeyela",
+    "description": "DFD Model for Final Year Project that represents a roguelike dungeon crawler game that implements procedural content generation"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "PCG Game DFD",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "diagramType": "STRIDE",
+        "id": 0,
+        "$$hashKey": "object:14",
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 454,
+                "y": 200
+              },
+              "angle": 0,
+              "id": "8c145b0e-0964-4e37-8c71-005b25744bd0",
+              "z": 1,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Malware tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Game can be tampered with Malware at  runtime . This is escpecially true for third party publishers of the game.",
+                  "$$hashKey": "object:192",
+                  "mitigation": "The introduction of authorization and authentication mechanisms for players should prevent tampering  by  malware"
+                },
+                {
+                  "ruleId": "13000296-b17d-4b72-9cc4-f5cc33f80e4c",
+                  "title": "Trojan information disclosure threat",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "Trojans with keyboard recording function can be deployed at runtime in order to  record the keystrokes and the sequence of the user’s actions",
+                  "$$hashKey": "object:240",
+                  "mitigation": "Cryptographic protocols are deployed to battle hackers who implements Trojan hacks"
+                },
+                {
+                  "ruleId": "13000296-b17d-4b72-9cc4-f5cc33f80e4c",
+                  "title": "Local File Inclusion information disclosure threat",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Local File Inclusion can deployed at runtime of the game by hackers to gain access to files stored on the server",
+                  "$$hashKey": "object:418",
+                  "mitigation": "Add firewall to server to prevent Local File Inclusion from  being deployed"
+                }
+              ],
+              "description": "Game is ran",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Start Game"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 12,
+                "y": 179
+              },
+              "angle": 0,
+              "id": "a7caac45-6e59-49c1-8940-d6cfe747f574",
+              "z": 2,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "b2a6d40d-d3f8-4750-8e4d-c02cc84b13dc",
+                  "title": "Bot spoofing threat",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "User could use bot in order to do well in the game.",
+                  "$$hashKey": "object:146",
+                  "mitigation": "Add a Captcha test. As a Captcha test effeciently removes bots that cannot read and supply a correct answer to the test"
+                },
+                {
+                  "ruleId": "87bc37e2-798e-4d68-bb96-feb1da26da48",
+                  "title": "No Login repudiation threat",
+                  "type": "Repudiation",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "The lack of a login system in the game means that the game does not adopt controls to properly track and log users' actions, thus permitting malicious manipulation",
+                  "$$hashKey": "object:160",
+                  "mitigation": "Add a login system for the game to track and log users' actions in order to prevent malicious manipulation"
+                }
+              ],
+              "description": "User whos action determine game generation",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "player"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 753,
+                "y": 126
+              },
+              "angle": 0,
+              "id": "6fde2a07-3620-4ce8-96c1-8aa11600800d",
+              "z": 9,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Player Health tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Hackers could attempt to modify player character's health so that they never die and the game never ends",
+                  "$$hashKey": "object:463"
+                }
+              ],
+              "description": "Game determines if player is still alive",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Determine\nplayer alive"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "8c145b0e-0964-4e37-8c71-005b25744bd0"
+              },
+              "target": {
+                "id": "6fde2a07-3620-4ce8-96c1-8aa11600800d"
+              },
+              "vertices": [
+                {
+                  "x": 625,
+                  "y": 211
+                },
+                {
+                  "x": 638,
+                  "y": 209
+                },
+                {
+                  "x": 702,
+                  "y": 195
+                }
+              ],
+              "id": "cfd91fcd-dccc-43cc-ac58-56e0faf09a3a",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "player status",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 10,
+              "hasOpenThreats": false,
+              "description": "The status of the player's health",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 450,
+                "y": 1
+              },
+              "angle": 0,
+              "id": "aebe9b48-1a1b-417e-96a1-e373dec732bc",
+              "z": 11,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "b2a6d40d-d3f8-4750-8e4d-c02cc84b13dc",
+                  "title": "Admin spoofing threat",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "User/bot who illegally gain access to admin rights can falsely pretend to be an admin and gain access to game's source code",
+                  "$$hashKey": "object:175",
+                  "mitigation": "Require two-factor authentication tp gain access to admin right so that it is more difficult for hackers to gain access to source code"
+                }
+              ],
+              "description": "Source code of game",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Executable Game Files"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "8c145b0e-0964-4e37-8c71-005b25744bd0"
+              },
+              "target": {
+                "id": "aebe9b48-1a1b-417e-96a1-e373dec732bc"
+              },
+              "vertices": [
+                {
+                  "x": 467,
+                  "y": 148
+                },
+                {
+                  "x": 461,
+                  "y": 125
+                }
+              ],
+              "id": "297251d0-dba8-4767-8fb9-c00b9e017d6e",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Request Information",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
+              "description": "Game requested for info from executable files",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "aebe9b48-1a1b-417e-96a1-e373dec732bc"
+              },
+              "target": {
+                "id": "8c145b0e-0964-4e37-8c71-005b25744bd0"
+              },
+              "vertices": [
+                {
+                  "x": 579,
+                  "y": 154
+                },
+                {
+                  "x": 571,
+                  "y": 169
+                }
+              ],
+              "id": "b3a52923-4cac-4f7c-81bd-cf759b520736",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Game Instructions",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 14,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Game Instructions tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Game Instructions sent by game could be tampered with by hacker in order to meet hacker's desire",
+                  "$$hashKey": "object:779"
+                },
+                {
+                  "ruleId": "13000296-b17d-4b72-9cc4-f5cc33f80e4c",
+                  "title": "Instructions information disclosure threat",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Inforamtion about the Instructions could possiby be accquired by hackers to manipulate the game for nefarious purposes",
+                  "$$hashKey": "object:788"
+                }
+              ],
+              "description": "Instructions are sent so game can be run",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 913,
+                "y": 87
+              },
+              "angle": 0,
+              "id": "be548a46-c347-4380-8f7a-f0bc836ed492",
+              "z": 15,
+              "hasOpenThreats": true,
+              "description": "A new dungeon is loaded if player is still alive",
+              "threats": [
+                {
+                  "ruleId": "c1377855-ea20-4c97-8861-f95c364fb8d2",
+                  "title": "Manipulating Dungeon Generation elevation threat",
+                  "type": "Elevation of privilege",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Hackers could potentially manipulate the game's dungeon generation to continuously generate dungeons in order to eventually crash the player's system",
+                  "$$hashKey": "object:199"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Load New\nDungeon"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "6fde2a07-3620-4ce8-96c1-8aa11600800d"
+              },
+              "target": {
+                "id": "be548a46-c347-4380-8f7a-f0bc836ed492"
+              },
+              "vertices": [],
+              "id": "532f1f5d-1670-489c-b160-168fd4b91a7a",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5120945506749096,
+                    "offset": 4.89630872519732
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Yes",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 16,
+              "hasOpenThreats": false,
+              "description": "Player is alive",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 1141,
+                "y": 41
+              },
+              "angle": 0,
+              "id": "a8ebfd85-4fb8-4eea-bc08-164911bfb7ce",
+              "z": 17,
+              "hasOpenThreats": false,
+              "description": "Flag is set for dungeon completed",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Set Dungeon\nCompleted\nFlag"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "be548a46-c347-4380-8f7a-f0bc836ed492"
+              },
+              "target": {
+                "id": "a8ebfd85-4fb8-4eea-bc08-164911bfb7ce"
+              },
+              "vertices": [
+                {
+                  "x": 1032,
+                  "y": 132
+                },
+                {
+                  "x": 1068,
+                  "y": 192
+                },
+                {
+                  "x": 1099,
+                  "y": 212
+                }
+              ],
+              "id": "bbe45b2a-0cdc-45da-990f-a8c395c056da",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5110237328335451,
+                    "offset": 5.206986951579385
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Game Status",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 19,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "edb05d76-a695-455f-947b-7d67b78bc31d",
+                  "title": "Game Status DoS threat",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Low",
+                  "description": "The game status could be prevented from updatibg thus preventing dungeoun generation",
+                  "$$hashKey": "object:207"
+                },
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Game Status tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Status of Game could be tampered with in order to perfom a DoS threat",
+                  "$$hashKey": "object:213"
+                }
+              ],
+              "description": "Determine the current status of game",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1286,
+                "y": 12
+              },
+              "angle": 0,
+              "id": "48ba8471-0d1a-4752-b784-ab765ed40ceb",
+              "z": 20,
+              "hasOpenThreats": false,
+              "description": "Player has completed the dungeon",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Dungeon Completed"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "a8ebfd85-4fb8-4eea-bc08-164911bfb7ce"
+              },
+              "target": {
+                "id": "48ba8471-0d1a-4752-b784-ab765ed40ceb"
+              },
+              "vertices": [
+                {
+                  "x": 1212,
+                  "y": 38
+                },
+                {
+                  "x": 1213,
+                  "y": 17
+                }
+              ],
+              "id": "bf6cd962-041c-4e58-bd43-5caf60e44adb",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Set Flag",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 21,
+              "hasOpenThreats": false,
+              "description": "Flag is set",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 180,
+                "y": 610
+              },
+              "angle": 0,
+              "id": "c1532897-0eab-41c6-938a-146290c3edc5",
+              "z": 24,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Display End\nCredits"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 662,
+                "y": 416
+              },
+              "angle": 0,
+              "id": "f86d75b5-0886-4010-8fba-bd3fc478b6d1",
+              "z": 25,
+              "hasOpenThreats": false,
+              "description": "The end of the game has been reached as player is dead",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "End Game"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "6fde2a07-3620-4ce8-96c1-8aa11600800d"
+              },
+              "target": {
+                "id": "f86d75b5-0886-4010-8fba-bd3fc478b6d1"
+              },
+              "vertices": [
+                {
+                  "x": 766,
+                  "y": 302
+                }
+              ],
+              "id": "eb27f5e0-a787-4f5c-940a-0b12d8b23885",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "No",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 26,
+              "hasOpenThreats": false,
+              "description": "Player is dead",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "f86d75b5-0886-4010-8fba-bd3fc478b6d1"
+              },
+              "target": {
+                "id": "c1532897-0eab-41c6-938a-146290c3edc5"
+              },
+              "vertices": [
+                {
+                  "x": 576,
+                  "y": 583
+                },
+                {
+                  "x": 482,
+                  "y": 661
+                },
+                {
+                  "x": 445,
+                  "y": 637
+                }
+              ],
+              "id": "c4ed9415-82f4-41ad-9ffc-ddcdba8bfb6d",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "No More Levels",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 27,
+              "hasOpenThreats": false,
+              "description": "Level Generation is halted after game has ended",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "c1532897-0eab-41c6-938a-146290c3edc5"
+              },
+              "target": {
+                "id": "a7caac45-6e59-49c1-8940-d6cfe747f574"
+              },
+              "vertices": [
+                {
+                  "x": 146,
+                  "y": 630
+                },
+                {
+                  "x": 119,
+                  "y": 422
+                },
+                {
+                  "x": 104,
+                  "y": 340
+                }
+              ],
+              "id": "b9a5f1f6-f383-4b94-8400-feb37abf17a2",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Display",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 28,
+              "hasOpenThreats": false,
+              "description": "End Credits are displayed to player",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "8c145b0e-0964-4e37-8c71-005b25744bd0"
+              },
+              "target": {
+                "id": "a7caac45-6e59-49c1-8940-d6cfe747f574"
+              },
+              "vertices": [
+                {
+                  "x": 615,
+                  "y": 345
+                },
+                {
+                  "x": 634,
+                  "y": 368
+                },
+                {
+                  "x": 595,
+                  "y": 413
+                },
+                {
+                  "x": 541,
+                  "y": 464
+                },
+                {
+                  "x": 526,
+                  "y": 473
+                },
+                {
+                  "x": 402,
+                  "y": 467
+                },
+                {
+                  "x": 337,
+                  "y": 427
+                },
+                {
+                  "x": 294,
+                  "y": 380
+                },
+                {
+                  "x": 261,
+                  "y": 349
+                },
+                {
+                  "x": 222,
+                  "y": 320
+                }
+              ],
+              "id": "019a93ad-d128-43a3-8126-de48c7880d6b",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Game Display",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 33,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "Display tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Hackers could attempt to manipulate the game's display for their own nefarious puposes",
+                  "$$hashKey": "object:679"
+                }
+              ],
+              "description": "Game is diplayed to the player",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "a7caac45-6e59-49c1-8940-d6cfe747f574"
+              },
+              "target": {
+                "id": "8c145b0e-0964-4e37-8c71-005b25744bd0"
+              },
+              "vertices": [],
+              "id": "ab7719b2-1b93-42eb-9145-3a5824674857",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Input",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 34,
+              "hasOpenThreats": false,
+              "description": "Action inputted by Player",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 1632,
+                "y": 12
+              },
+              "angle": 0,
+              "id": "507468fc-a9ea-4850-9447-dc9dfb58d267",
+              "z": 35,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "4adaa48a-0345-4533-a189-64c98c4420dd",
+                  "title": "SQL injection tampering threat",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "description": "Hackers tamper with the database by using online forms to inject specific SQL code that can then compromise the database",
+                  "$$hashKey": "object:303",
+                  "mitigation": "Input validation and parametrized queries including prepared statements should be used to prevent SQL Injection attack"
+                },
+                {
+                  "ruleId": "edb05d76-a695-455f-947b-7d67b78bc31d",
+                  "title": "Dungeon Generation DoS threat",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Hackers can deny service of game by not allowing the database to notify the game that dungeon has been seeded thus halting dungeon generation",
+                  "$$hashKey": "object:226"
+                },
+                {
+                  "ruleId": "13000296-b17d-4b72-9cc4-f5cc33f80e4c",
+                  "title": "Seeded Dungeon information disclosure threat",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Gaining access to database of seeded dungeons could provide hackers with vital info on how dungeons are generated thus giving further insight on how to manipulate game",
+                  "$$hashKey": "object:349"
+                }
+              ],
+              "description": "Database for completed dungeons",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Dungeon Database"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "48ba8471-0d1a-4752-b784-ab765ed40ceb"
+              },
+              "target": {
+                "id": "507468fc-a9ea-4850-9447-dc9dfb58d267"
+              },
+              "vertices": [],
+              "id": "04b28b43-750d-4302-b000-0405551db470",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Dungeon is seeded",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 36,
+              "hasOpenThreats": false,
+              "description": "Dungeon is seeded so it is not repeated for generation",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "507468fc-a9ea-4850-9447-dc9dfb58d267"
+              },
+              "target": {
+                "id": "48ba8471-0d1a-4752-b784-ab765ed40ceb"
+              },
+              "vertices": [
+                {
+                  "x": 1560,
+                  "y": 109
+                },
+                {
+                  "x": 1522,
+                  "y": 121
+                },
+                {
+                  "x": 1504,
+                  "y": 115
+                }
+              ],
+              "id": "c516e4a3-ae8d-41fb-91ec-bb51dd7d22c0",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5957404710525858,
+                    "offset": -37.969604069902466
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Notify that Dungeon\nhas been seeded",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 37,
+              "hasOpenThreats": false,
+              "description": "Notify the game that completed dungeon has been added to database",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 1694,
+                "y": 1
+              },
+              "target": {
+                "x": 1707,
+                "y": 327
+              },
+              "vertices": [
+                {
+                  "x": 1562,
+                  "y": 63
+                },
+                {
+                  "x": 1495,
+                  "y": 287
+                },
+                {
+                  "x": 1684,
+                  "y": 350
+                }
+              ],
+              "id": "3e5a858a-2725-442e-ba54-2c5168a576ac",
+              "z": 38,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 243,
+                "y": 118
+              },
+              "target": {
+                "x": 3,
+                "y": 371
+              },
+              "vertices": [
+                {
+                  "x": 269,
+                  "y": 294
+                },
+                {
+                  "x": 244,
+                  "y": 346
+                }
+              ],
+              "id": "8dbd0d47-35b5-4dd9-a54d-fe7e6e96dd29",
+              "z": 39,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 695,
+                "y": 132
+              },
+              "target": {
+                "x": 319,
+                "y": 107
+              },
+              "vertices": [],
+              "id": "90b09762-78ec-4fcc-a7c2-32f6ca8e97d3",
+              "z": 40,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "48ba8471-0d1a-4752-b784-ab765ed40ceb"
+              },
+              "target": {
+                "id": "6fde2a07-3620-4ce8-96c1-8aa11600800d"
+              },
+              "vertices": [
+                {
+                  "x": 1244,
+                  "y": 299
+                },
+                {
+                  "x": 1145,
+                  "y": 398
+                }
+              ],
+              "id": "be7a7956-e257-4b07-8ece-add2e3386485",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "player status",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 41,
+              "hasOpenThreats": false,
+              "description": "The status of the player's health",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 798,
+          "width": 6479
+        }
+      }
+    ],
+    "reviewer": "Michael Schukat"
+  }
+}
